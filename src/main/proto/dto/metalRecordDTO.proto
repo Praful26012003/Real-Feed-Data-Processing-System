@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message SpotPriceRequestDTO {
+  string date = 1;
+  string weight_unit = 2;
+  double ask = 3;
+  double mid = 4;
+  double bid = 5;
+  double value = 6;
+  double performance = 7;
+}
+
+message SpotPriceResponseDTO {
+  string date = 1;
+  string weight_unit = 2;
+  double ask = 3;
+  double mid = 4;
+  double bid = 5;
+  double value = 6;
+  double performance = 7;
+}
+
+message SpotPricesListRequestDTO {
+  repeated SpotPriceRequestDTO spot_prices = 1;
+}
+
+message SpotPricesListResponseDTO {
+  repeated SpotPriceResponseDTO spot_prices = 1;
+}
+
+message SpotPriceByPaginationDTO {
+  repeated SpotPriceResponseDTO spot_price = 1;
+  string page_token = 2;
+  string reverse_page_token = 3;
+}
+
+message GoldPerformanceDTO {
+  string username = 1;
+  double gold_balance = 2;
+  double invested_amount = 3;
+  double performance = 4;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message TransactionDetailsDTO {
+  string transaction_id = 1;
+  string transaction_time = 2;
+  string username = 3;
+  double gold_balance = 4;
+  double amount_balance = 5;
+  string mode = 6;
+  string status = 7;
+}
+
+message TransactionDetailsListDTO {
+  repeated TransactionDetailsDTO transactions = 1;
+}
+
+
+

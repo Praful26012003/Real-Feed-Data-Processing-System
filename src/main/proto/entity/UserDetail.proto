@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message UserAssetDetailsEntity {
+  int32 ledger_id = 1;
+  string username = 2;
+  double gold_balance = 3;
+  double amount_balance = 4;
+}
+
+message UserBalanceUpdateRequestEntity {
+  string username = 1;
+  double updated_amount_balance = 2;
+}
+
+message UserGoldUpdateRequestEntity {
+  string username = 1;
+  double updated_gold_balance = 2;
+}

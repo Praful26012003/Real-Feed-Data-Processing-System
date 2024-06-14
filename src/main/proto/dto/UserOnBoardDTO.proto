@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+// signup
+message UserRequestDTO {
+  string username = 1;
+  string password = 2;
+}
+
+message UserResponseDTO {
+  string username = 1;
+  string message = 2;
+  string password = 3;
+}
+
+//login
+message AuthRequestDTO {
+  string username = 1;
+  string password = 2;
+}
+
+message AuthResponseDTO {
+  string username = 1;
+  string access_token = 2;
+}

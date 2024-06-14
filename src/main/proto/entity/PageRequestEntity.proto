@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message PageRequestForSpotPriceListEntity {
+  string from_time = 1;
+  string to_time = 2;
+  int32 page_size = 3;
+}

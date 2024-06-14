@@ -1,0 +1,61 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message SpotPriceRequestEntity {
+  string date = 1;
+  string weight_unit = 2;
+  double ask = 3;
+  double mid = 4;
+  double bid = 5;
+  double value = 6;
+  double performance = 7;
+}
+
+message SpotPriceResponseEntity {
+  string date = 1;
+  string weight_unit = 2;
+  double ask = 3;
+  double mid = 4;
+  double bid = 5;
+  double value = 6;
+  double performance = 7;
+}
+
+message SpotPricesListRequestEntity {
+  repeated SpotPriceRequestEntity spot_prices = 1;
+}
+
+message SpotPricesListResponseEntity {
+  repeated SpotPriceResponseEntity spot_prices = 1;
+}
+
+message LastHistoricalSpotPrice {
+  string date = 1;
+  string weight_unit = 2;
+  double close = 3;
+  double high = 4;
+  double low = 5;
+  double open = 6;
+}
+
+message LastHistoricalSpotPriceList {
+  repeated LastHistoricalSpotPrice last_historical_spot_price = 1;
+}
+
+
+message DifferentSpotPriceForTheDay {
+
+  repeated SpotPriceRequestEntity items = 1;
+  double markets_closed = 2;
+  LastHistoricalSpotPrice last_historical_spot_price = 3;
+}
+
+message SpotPricesRequestEntity {
+  string metal = 1;
+  string currency = 2;
+  string weight_unit = 3;
+  DifferentSpotPriceForTheDay _embedded = 4;
+}

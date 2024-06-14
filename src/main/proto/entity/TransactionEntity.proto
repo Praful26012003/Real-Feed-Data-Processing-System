@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message TransactionAddRequestEntity {
+    string transaction_id = 1;
+    string username = 2;
+    double gold_balance = 3;
+    double amount_balance = 4;
+    string mode = 5;
+    string status = 6;
+    string transaction_time = 7;
+}
+
+message TransactionUpdateRequestEntity {
+    string transaction_id = 1;
+    string status = 2;
+}
+
+message TransactionDetailsEntity {
+    string transaction_id = 1;
+    string transaction_time = 2;
+    string username = 3;
+    double gold_balance = 4;
+    double amount_balance = 5;
+    string mode = 6;
+    string status = 7;
+}
+
+message TransactionDetailsListEntity {
+    repeated TransactionDetailsEntity transactions = 1;
+}
+
+

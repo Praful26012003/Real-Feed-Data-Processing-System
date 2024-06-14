@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.praful.gradledemo;
+option java_package = "com.praful.feedapplication.protos";
+option java_multiple_files = true;
+
+message PageRequestDTO {
+  string from_time = 1;
+  string to_time = 2;
+  string page_token = 3;
+  string reverse_page_token = 4;
+  int32 page_size = 5;
+}
